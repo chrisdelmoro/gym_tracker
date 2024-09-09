@@ -4,5 +4,13 @@
     "description": "",
     "author": "Christian C. Del Moro",
     "private": true,
-    "license": "UNLICENSED"
+    "license": "UNLICENSED",
+    "packageManager": "pnpm@9.10.0",
+    "devDependencies": {
+        "turbo": "^2.1.1"
+    },
+    "scripts": {
+        "start:dev": "turbo run start:dev",
+        "build": "turbo run build"
+    }
 }
