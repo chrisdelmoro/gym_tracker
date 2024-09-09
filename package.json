@@ -1,8 +1,8 @@
 {
-  "name": "nest auth tutorial",
+  "name": "gym_tracker",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "Christian C. Del Moro",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
