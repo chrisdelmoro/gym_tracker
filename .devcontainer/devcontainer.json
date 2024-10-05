@@ -13,6 +13,12 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "npm install -g pnpm && pnpm install",
+	"remoteEnv": {
+		"JWT_SECRET": "blablabla"
+	},
+	"containerEnv": {
+		"JWT_SECRET": "cKAShWOBE+09XUbEBtrYyhTY1spdjDR+E8kAFppfam2Kjf5qrz4A1jlakE2/QQEwuN6brxl0TnbOzTxQbNybYeKw8nnYzZvZmct3ZUdVwxJHhCvqhua0uA1qq7iVpcHO"
+	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
