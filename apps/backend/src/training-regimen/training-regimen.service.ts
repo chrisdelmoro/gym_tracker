@@ -61,4 +61,18 @@ export class TrainingRegimenService {
 
     this.trainingRegimens.splice(entry, 1, trainingRegimenDTO);
   }
+
+  deleteRegimen(trainingRegimenDTO: TrainingRegimenDTO) {
+    const entry = this.trainingRegimens.findIndex(
+      (regimen) => regimen.regimen === trainingRegimenDTO.regimen,
+    );
+
+    if (entry === -1) {
+      throw new NotFoundException(
+        `Regimen ${trainingRegimenDTO.regimen} does not exist!`,
+      );
+    }
+
+    this.trainingRegimens.splice(entry, 1);
+  }
 }
