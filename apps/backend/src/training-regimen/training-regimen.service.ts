@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, NotFoundException } from "@nestjs/common";
 import { TrainingRegimenDTO } from "./dto/training-regimen.dto";
 
 @Injectable()
@@ -46,5 +46,19 @@ export class TrainingRegimenService {
 
   addRegimen(trainingRegimenDTO: TrainingRegimenDTO) {
     this.trainingRegimens.push(trainingRegimenDTO);
+  }
+
+  updateRegimen(trainingRegimenDTO: TrainingRegimenDTO) {
+    const entry = this.trainingRegimens.findIndex(
+      (regimen) => regimen.regimen === trainingRegimenDTO.regimen,
+    );
+
+    if (entry === -1) {
+      throw new NotFoundException(
+        `Regimen ${trainingRegimenDTO.regimen} does not exist!`,
+      );
+    }
+
+    this.trainingRegimens.splice(entry, 1, trainingRegimenDTO);
   }
 }

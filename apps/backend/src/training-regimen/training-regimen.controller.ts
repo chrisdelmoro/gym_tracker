@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, UseGuards } from "@nestjs/common";
+import { Body, Controller, Get, Patch, Post, UseGuards } from "@nestjs/common";
 import { TrainingRegimenService } from "./training-regimen.service";
 import { JwtAuthGuard } from "src/auth/guards/jwt.guard";
 import { TrainingRegimenDTO } from "./dto/training-regimen.dto";
@@ -17,5 +17,11 @@ export class TrainingRegimenController {
   @UseGuards(JwtAuthGuard)
   addRegimen(@Body() trainingRegimenDTO: TrainingRegimenDTO) {
     this.trainingRegimenService.addRegimen(trainingRegimenDTO);
+  }
+
+  @Patch()
+  @UseGuards(JwtAuthGuard)
+  updateRegimen(@Body() trainingRegimenDTO: TrainingRegimenDTO) {
+    this.trainingRegimenService.updateRegimen(trainingRegimenDTO);
   }
 }
